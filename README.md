@@ -1,4 +1,8 @@
-# spudlang VS Code Extension
+<div align="center">
+  <img src="docs/syntax-highlighted.png" alt="Sample generated planet" width="650">
+  <br>
+  <h1>spudlang VSCode</h1>
+</div>
 
 Syntax highlighting for **spudlang**, the domain-specific language used by [spudplate](https://github.com/spuddydev/spudplate), a template scaffolding system that compiles `.spud` files into standalone binaries.
 
