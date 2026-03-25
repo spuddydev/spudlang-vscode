@@ -1,0 +1,36 @@
+{
+  "name": "spudlang",
+  "displayName": "spudlang",
+  "description": "Syntax highlighting for spudlang, the spudplate templating language",
+  "version": "0.1.0",
+  "publisher": "spuddydev",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "spudlang",
+        "aliases": [
+          "spudlang",
+          "spudplate"
+        ],
+        "extensions": [
+          ".spud",
+          ".spudplate"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "spudlang",
+        "scopeName": "source.spudlang",
+        "path": "./syntaxes/spudplate.tmLanguage.json"
+      }
+    ]
+  }
+}

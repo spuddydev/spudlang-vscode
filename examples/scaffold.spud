@@ -1,0 +1,38 @@
+# University class scaffolder
+
+ask unit_code "Unit code?" string required
+ask name "Class name?" string required
+
+let lower_name = lower(name)
+let project_dir = "{unit_code}_{lower_name}"
+
+mkdir "{project_dir}"
+mkdir "{project_dir}/src"
+
+# Ask for weeks after initial setup
+ask num_weeks "How many weeks?" int required
+
+file "{project_dir}/README.md" content "# " + unit_code + " — " + name + "\n"
+
+# Language-specific setup
+ask lang "Language (c, cpp, python)?" string required
+let lower_lang = lower(lang)
+mkdir "{project_dir}/include" when lower_lang == "c" or lower_lang == "cpp"
+file "{project_dir}/src/main.c" from "templates/main.c" when lower_lang == "c"
+file "{project_dir}/src/main.cpp" from "templates/main.cpp" when lower_lang == "cpp"
+file "{project_dir}/src/main.py" from "templates/main.py" when lower_lang == "python"
+file "{project_dir}/Makefile" from "templates/Makefile" verbatim when lower_lang != "python"
+
+# Git setup
+ask use_git "Initialise git repo?" bool
+file "{project_dir}/.gitignore" from "templates/gitignore" when use_git
+
+# Weekly folders
+repeat num_weeks as week
+  mkdir "{project_dir}/week_{week}"
+  file "{project_dir}/week_{week}/notes.md" content "# Week " + week + "\n"
+  mkdir "{project_dir}/week_{week}/submission" when week > 2
+end
+
+# Build script for compiled languages
+file "{project_dir}/build.sh" from "templates/build.sh" mode 0755 when not (lang == "python")
