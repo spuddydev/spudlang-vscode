@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/syntax-highlighted.png" alt="Sample generated planet" width="650">
+  <img src="docs/syntax-highlighted.png" alt="Sample highlighted ask statement reading 'want to start tempalting?'" width="650">
   <br>
   <h1>spudlang VSCode</h1>
 </div>
