@@ -4,13 +4,13 @@
   "scopeName": "source.spudlang",
   "patterns": [
     { "include": "#comment" },
+    { "include": "#line-continuation" },
     { "include": "#string-interpolated" },
     { "include": "#string-plain" },
     { "include": "#numeric" },
     { "include": "#operator" },
     { "include": "#keyword-control" },
     { "include": "#keyword-command" },
-    { "include": "#keyword-modifier" },
     { "include": "#type" },
     { "include": "#boolean" },
     { "include": "#builtin-function" },
@@ -20,6 +20,11 @@
     "comment": {
       "name": "comment.line.number-sign.spudlang",
       "match": "#.*$"
+    },
+
+    "line-continuation": {
+      "name": "punctuation.separator.continuation.spudlang",
+      "match": "\\\\$"
     },
 
     "string-interpolated": {
@@ -59,7 +64,7 @@
         },
         {
           "name": "keyword.operator.logical.spudlang",
-          "match": "\\b(and|or)\\b"
+          "match": "\\b(and|or|not)\\b"
         },
         {
           "name": "keyword.operator.assignment.spudlang",
@@ -79,12 +84,7 @@
 
     "keyword-command": {
       "name": "keyword.other.command.spudlang",
-      "match": "\\b(ask|let|mkdir|file|from|content|mode|verbatim|append|not)\\b"
-    },
-
-    "keyword-modifier": {
-      "name": "storage.modifier.spudlang",
-      "match": "\\b(required)\\b"
+      "match": "\\b(ask|let|mkdir|file|copy|into|include|run|in|from|content|mode|verbatim|append|default|options)\\b"
     },
 
     "type": {
@@ -99,7 +99,7 @@
 
     "builtin-function": {
       "name": "support.function.builtin.spudlang",
-      "match": "\\b(lower|upper|trim)\\b(?=\\s*\\()"
+      "match": "\\b(lower|upper|trim|replace)\\b(?=\\s*\\()"
     },
 
     "variable": {

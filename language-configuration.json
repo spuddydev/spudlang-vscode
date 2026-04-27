@@ -17,7 +17,7 @@
   ],
   "folding": {
     "markers": {
-      "start": "^\\s*(repeat|ask|file|mkdir)\\b",
+      "start": "^\\s*repeat\\b",
       "end": "^\\s*end\\b"
     }
   },
