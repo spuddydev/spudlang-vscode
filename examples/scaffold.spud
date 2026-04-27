@@ -1,38 +1,34 @@
 # University class scaffolder
 
-ask unit_code "Unit code?" string required
-ask name "Class name?" string required
+ask unit_code "Unit code?" string
+ask name "Class name?" string
 
-let lower_name = lower(name)
-let project_dir = "{unit_code}_{lower_name}"
+let lower_name = lower(trim(name))
+let project_dir = unit_code + "_" + lower_name
 
-mkdir "{project_dir}"
-mkdir "{project_dir}/src"
+mkdir {project_dir} as project
+mkdir project/src
 
-# Ask for weeks after initial setup
-ask num_weeks "How many weeks?" int required
+file project/README.md content "# " + unit_code + " - " + name + "\n"
 
-file "{project_dir}/README.md" content "# " + unit_code + " — " + name + "\n"
+ask lang "Language?" string options "c" "cpp" "python" default "cpp"
+mkdir project/include when lang == "c" or lang == "cpp"
+file project/src/main.c from templates/main.c when lang == "c"
+file project/src/main.cpp from templates/main.cpp when lang == "cpp"
+file project/src/main.py from templates/main.py when lang == "python"
+file project/Makefile from templates/Makefile verbatim when lang != "python"
+file project/build.sh from templates/build.sh mode 0755 when not (lang == "python")
 
-# Language-specific setup
-ask lang "Language (c, cpp, python)?" string required
-let lower_lang = lower(lang)
-mkdir "{project_dir}/include" when lower_lang == "c" or lower_lang == "cpp"
-file "{project_dir}/src/main.c" from "templates/main.c" when lower_lang == "c"
-file "{project_dir}/src/main.cpp" from "templates/main.cpp" when lower_lang == "cpp"
-file "{project_dir}/src/main.py" from "templates/main.py" when lower_lang == "python"
-file "{project_dir}/Makefile" from "templates/Makefile" verbatim when lower_lang != "python"
+ask use_git "Initialise git repo?" bool default true
+file project/.gitignore from templates/gitignore when use_git
+run "git init" in project when use_git
 
-# Git setup
-ask use_git "Initialise git repo?" bool
-file "{project_dir}/.gitignore" from "templates/gitignore" when use_git
-
-# Weekly folders
+ask num_weeks "How many weeks?" int default 12
 repeat num_weeks as week
-  mkdir "{project_dir}/week_{week}"
-  file "{project_dir}/week_{week}/notes.md" content "# Week " + week + "\n"
-  mkdir "{project_dir}/week_{week}/submission" when week > 2
+  mkdir project/week_{week}
+  file project/week_{week}/notes.md content "# Week " + week + "\n"
+  mkdir project/week_{week}/submission when week > 2
 end
 
-# Build script for compiled languages
-file "{project_dir}/build.sh" from "templates/build.sh" mode 0755 when not (lang == "python")
+ask use_claude "Set up Claude config?" bool default false
+include claude_setup when use_claude

@@ -8,13 +8,15 @@ Syntax highlighting for **spudlang**, the domain-specific language used by [spud
 
 ## Features
 
-- Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `repeat`, `when`, etc.)
+- Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `copy`, `include`, `run`, `repeat`, `when`, etc.)
+- Clause keywords (`from`, `into`, `in`, `as`, `content`, `mode`, `verbatim`, `append`, `default`, `options`)
 - Type annotations (`string`, `int`, `bool`)
 - String literals with `{interpolation}` support
 - `# comments`
 - Logical/comparison operators (`and`, `or`, `not`, `==`, `!=`, etc.)
 - Arithmetic operators (`+`, `-`, `*`, `/`)
-- Built-in functions (`lower`, `upper`, `trim`)
+- Built-in functions (`lower`, `upper`, `trim`, `replace`)
+- Line continuation (`\` at end of line)
 - Code folding for `repeat`...`end` blocks
 - Auto-indent support
 
