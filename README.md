@@ -10,8 +10,8 @@ Syntax highlighting and IntelliSense for **spudlang**, the domain-specific langu
 
 **Syntax**
 
-- Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `copy`, `include`, `run`, `repeat`, `when`, etc.)
-- Clause keywords (`from`, `into`, `in`, `as`, `content`, `mode`, `verbatim`, `append`, `default`, `options`)
+- Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `copy`, `include`, `run`, `repeat`, `if`, `when`, etc.)
+- Clause keywords (`from`, `into`, `in`, `as`, `content`, `mode`, `verbatim`, `append`, `default`, `options`, `timeout`)
 - Type annotations (`string`, `int`, `bool`)
 - String literals with `{interpolation}` support
 - `# comments`
@@ -19,7 +19,7 @@ Syntax highlighting and IntelliSense for **spudlang**, the domain-specific langu
 - Arithmetic operators (`+`, `-`, `*`, `/`)
 - Built-in functions (`lower`, `upper`, `trim`, `replace`)
 - Line continuation (`\` at end of line)
-- Code folding for `repeat`...`end` blocks
+- Code folding for `repeat`...`end` and `if`...`end` blocks
 - Auto-indent support
 
 **IntelliSense**
@@ -58,7 +58,7 @@ Syntax highlighting and IntelliSense for **spudlang**, the domain-specific langu
 
 ## Syntax Reference
 
-See the full [spudlang syntax reference](https://github.com/spuddydev/spudplate/blob/main/docs/syntax.md) in the main spudplate repo.
+See the full [spudlang language reference](https://github.com/spuddydev/spudplate/tree/main/docs/lang) in the main spudplate repo.
 
 ## Customising
 
