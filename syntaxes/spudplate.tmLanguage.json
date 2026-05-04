@@ -79,12 +79,12 @@
 
     "keyword-control": {
       "name": "keyword.control.spudlang",
-      "match": "\\b(when|repeat|as|end)\\b"
+      "match": "\\b(when|repeat|if|as|end)\\b"
     },
 
     "keyword-command": {
       "name": "keyword.other.command.spudlang",
-      "match": "\\b(ask|let|mkdir|file|copy|into|include|run|in|from|content|mode|verbatim|append|default|options)\\b"
+      "match": "\\b(ask|let|mkdir|file|copy|into|include|run|in|from|content|mode|verbatim|append|default|options|timeout)\\b"
     },
 
     "type": {
