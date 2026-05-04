@@ -17,12 +17,12 @@
   ],
   "folding": {
     "markers": {
-      "start": "^\\s*repeat\\b",
+      "start": "^\\s*(repeat|if)\\b",
       "end": "^\\s*end\\b"
     }
   },
   "indentationRules": {
-    "increaseIndentPattern": "^\\s*(repeat)\\b.*$",
+    "increaseIndentPattern": "^\\s*(repeat|if)\\b.*$",
     "decreaseIndentPattern": "^\\s*end\\b"
   }
 }
