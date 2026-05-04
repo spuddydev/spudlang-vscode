@@ -6,28 +6,30 @@ ask name "Class name?" string
 let lower_name = lower(trim(name))
 let project_dir = unit_code + "_" + lower_name
 
-mkdir {project_dir} as project
-mkdir project/src
+mkdir "{project_dir}" as project
+mkdir project/"src"
 
-file project/README.md content "# " + unit_code + " - " + name + "\n"
+file project/"README.md" content "# {unit_code} - {name}
+"
 
 ask lang "Language?" string options "c" "cpp" "python" default "cpp"
-mkdir project/include when lang == "c" or lang == "cpp"
-file project/src/main.c from templates/main.c when lang == "c"
-file project/src/main.cpp from templates/main.cpp when lang == "cpp"
-file project/src/main.py from templates/main.py when lang == "python"
-file project/Makefile from templates/Makefile verbatim when lang != "python"
-file project/build.sh from templates/build.sh mode 0755 when not (lang == "python")
+mkdir project/"include" when lang == "c" or lang == "cpp"
+file project/"src/main.c" from "templates/main.c" when lang == "c"
+file project/"src/main.cpp" from "templates/main.cpp" when lang == "cpp"
+file project/"src/main.py" from "templates/main.py" when lang == "python"
+file project/"Makefile" from "templates/Makefile" verbatim when lang != "python"
+file project/"build.sh" from "templates/build.sh" mode 0755 when not (lang == "python")
 
 ask use_git "Initialise git repo?" bool default true
-file project/.gitignore from templates/gitignore when use_git
-run "git init" in project when use_git
+file project/".gitignore" from "templates/gitignore" when use_git
+run "git init" in project timeout 30 when use_git
 
 ask num_weeks "How many weeks?" int default 12
 repeat num_weeks as week
-  mkdir project/week_{week}
-  file project/week_{week}/notes.md content "# Week " + week + "\n"
-  mkdir project/week_{week}/submission when week > 2
+  mkdir project/"week_{week}"
+  file project/"week_{week}/notes.md" content "# Week {week}
+"
+  mkdir project/"week_{week}/submission" when week > 2
 end
 
 ask use_claude "Set up Claude config?" bool default false
