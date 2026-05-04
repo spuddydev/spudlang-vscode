@@ -33,10 +33,6 @@
       "end": "\"",
       "patterns": [
         {
-          "name": "constant.character.escape.spudlang",
-          "match": "\\\\[nrt\\\\\"{}]"
-        },
-        {
           "name": "meta.interpolation.spudlang",
           "match": "\\{[^}]*\\}",
           "captures": {
