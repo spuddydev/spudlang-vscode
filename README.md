@@ -13,6 +13,7 @@ Syntax highlighting and IntelliSense for **spudlang**, the domain-specific langu
 - Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `copy`, `include`, `run`, `repeat`, `if`, `when`, etc.)
 - Clause keywords (`from`, `into`, `in`, `as`, `content`, `mode`, `verbatim`, `append`, `default`, `options`, `timeout`)
 - Type annotations (`string`, `int`, `bool`)
+- Version pins on `include` (`include dep@2`)
 - String literals with `{interpolation}` support
 - `# comments`
 - Logical/comparison operators (`and`, `or`, `not`, `==`, `!=`, etc.)
