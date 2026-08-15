@@ -4,7 +4,7 @@
   <h1>spudlang VSCode</h1>
 </div>
 
-Syntax highlighting and IntelliSense for **spudlang**, the domain-specific language used by [spudplate](https://github.com/spuddydev/spudplate), a template scaffolding system that compiles `.spud` files into standalone binaries.
+Syntax highlighting and IntelliSense for **spudlang**, the domain-specific language used by [spudplate](https://github.com/spuddydev/spudplate), a template scaffolding system. You write a `.spud` file, install it once, and run it whenever you want to scaffold a new project, answering prompts as it goes.
 
 ## Features
 
