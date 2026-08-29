@@ -4,7 +4,7 @@
   <h1>spudlang VSCode</h1>
 </div>
 
-Syntax highlighting and IntelliSense for **spudlang**, the domain-specific language used by [spudplate](https://github.com/spuddydev/spudplate), a template scaffolding system that compiles `.spud` files into standalone binaries.
+Syntax highlighting and IntelliSense for **spudlang**, the domain-specific language used by [spudplate](https://github.com/spuddydev/spudplate), a template scaffolding system. You write a `.spud` file, install it once, and run it whenever you want to scaffold a new project, answering prompts as it goes.
 
 ## Features
 
@@ -13,6 +13,7 @@ Syntax highlighting and IntelliSense for **spudlang**, the domain-specific langu
 - Keyword highlighting (`ask`, `let`, `mkdir`, `file`, `copy`, `include`, `run`, `repeat`, `if`, `when`, etc.)
 - Clause keywords (`from`, `into`, `in`, `as`, `content`, `mode`, `verbatim`, `append`, `default`, `options`, `timeout`)
 - Type annotations (`string`, `int`, `bool`)
+- Version pins on `include` (`include dep@2`)
 - String literals with `{interpolation}` support
 - `# comments`
 - Logical/comparison operators (`and`, `or`, `not`, `==`, `!=`, etc.)

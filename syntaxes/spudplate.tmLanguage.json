@@ -7,6 +7,7 @@
     { "include": "#line-continuation" },
     { "include": "#string-interpolated" },
     { "include": "#string-plain" },
+    { "include": "#version-pin" },
     { "include": "#numeric" },
     { "include": "#operator" },
     { "include": "#keyword-control" },
@@ -24,7 +25,7 @@
 
     "line-continuation": {
       "name": "punctuation.separator.continuation.spudlang",
-      "match": "\\\\$"
+      "match": "\\\\[ \\t]*$"
     },
 
     "string-interpolated": {
@@ -45,6 +46,14 @@
     "string-plain": {
       "name": "string.quoted.double.spudlang",
       "match": "\"[^\"]*\""
+    },
+
+    "version-pin": {
+      "match": "(@)([0-9]+)",
+      "captures": {
+        "1": { "name": "keyword.operator.version-pin.spudlang" },
+        "2": { "name": "constant.numeric.spudlang" }
+      }
     },
 
     "numeric": {
