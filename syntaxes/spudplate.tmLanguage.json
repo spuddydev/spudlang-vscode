@@ -25,7 +25,7 @@
 
     "line-continuation": {
       "name": "punctuation.separator.continuation.spudlang",
-      "match": "\\\\$"
+      "match": "\\\\[ \\t]*$"
     },
 
     "string-interpolated": {
